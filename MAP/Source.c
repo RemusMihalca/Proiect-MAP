@@ -8,5 +8,6 @@ void afisare()
 int main()
 {
 	afisare();
+	printf("Update Test");
 	return 0;
 }
