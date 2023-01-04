@@ -4,19 +4,22 @@
 #include <stdlib.h>
 #include <time.h>
 
-void citire(int a[][20], int m, int n)
+void citire(int a[][10], int m, int n)
 {
-	for (int i = 0; i < m; i++) 
+	int upper = 99;
+	int lower = -99;
+
+	srand(time(0));
+	for (int i = 0; i < m; i++)
 	{
-		for (int j = 0; j < n; j++) 
+		for (int j = 0; j < n; j++)
 		{
-			printf("a[%d][%d]=", i, j);
-			scanf("%d", &a[i][j]);
+			a[i][j] = (rand() % (upper - lower + 1)) + lower;
 		}
 	}
 }
 
-void afisare(int a[][20], int m, int n)
+void afisare(int a[][10], int m, int n)
 {
 	for (int i = 0; i < m; i++)
 	{
@@ -28,7 +31,7 @@ void afisare(int a[][20], int m, int n)
 	}
 }
 
-void sumaPr(int a[][20], int m, int n)
+void sumaPr(int a[][10], int m, int n)
 {
 	int suma = 0;
 	for (int i = 0; i < m; i++)
@@ -44,7 +47,7 @@ void sumaPr(int a[][20], int m, int n)
 	printf("%d\n", suma);
 }
 
-void sumaSec(int a[][20], int m, int n)
+void sumaSec(int a[][10], int m, int n)
 {
 	int suma = 0;
 	if (m == n)
@@ -59,7 +62,7 @@ void sumaSec(int a[][20], int m, int n)
 				}
 			}
 		}
-		printf("%d\n", suma);
+	printf("%d\n", suma);
 	}
 	else
 	{
@@ -67,7 +70,7 @@ void sumaSec(int a[][20], int m, int n)
 	}
 }
 
-void minMaxPr(int a[][20], int m, int n)
+void minMaxPr(int a[][10], int m, int n)
 {
 	int max = INT_MIN, min = INT_MAX;
 	for (int i = 0; i < m; i++)
@@ -76,7 +79,7 @@ void minMaxPr(int a[][20], int m, int n)
 		{
 			if (i > j)
 			{
-				if (a[i][j] > max) 
+				if (a[i][j] > max)
 				{
 					max = a[i][j];
 				}
@@ -92,7 +95,7 @@ void minMaxPr(int a[][20], int m, int n)
 	printf("min: %d\n", min);
 }
 
-minMaxSec(int a[][20], int m, int n)
+minMaxSec(int a[][10], int m, int n)
 {
 	int max = INT_MIN, min = INT_MAX;
 	if (m == n)
@@ -126,13 +129,15 @@ minMaxSec(int a[][20], int m, int n)
 
 int main()
 {
-	int a[20][20], m, n;
+	int a[10][10], m, n;
+	int upper = 10;
+	int lower = 2;
 
-	printf("m= "); 
-	scanf("%d", &m);
+	srand(time(0));
+	m = (rand() % (upper - lower + 1)) + lower;
+	n = (rand() % (upper - lower + 1)) + lower;
 
-	printf("n= "); 
-	scanf("%d", &n);
+	printf("\n m = %d \n n = %d \n", m, n);
 
 	citire(a, m, n);
 
