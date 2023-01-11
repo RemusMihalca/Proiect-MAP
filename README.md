@@ -35,5 +35,5 @@ ce spune ca ea nu exista si nu se pot face calcule in functie de acea diagonala.
 
 
 Bibliografie:
-https://docs.docker.com/get-started/overview/
-https://www.includehelp.com/c-programs/generate-random-numbers-within-a-range.aspx
+	https://docs.docker.com/get-started/overview/
+	https://www.includehelp.com/c-programs/generate-random-numbers-within-a-range.aspx
